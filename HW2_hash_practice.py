@@ -3,6 +3,7 @@ f = open(path) #開txt
 
 dictionary={} #字典
 for line in f.readlines():#對於每一行
+    line=''.join(line.split())#刪除換行
     try:#字典值存在則加1
         dictionary[line]+=1
     except:#字典值不存在則加入
