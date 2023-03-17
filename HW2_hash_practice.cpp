@@ -12,7 +12,7 @@ int main() {
 
     string line;//宣告單行
     while (getline(ifs, line)) {//讀取單行
-        dictionary[line]+=1;
+        dictionary[line]+=1;//加入字典
     }
     for (const auto& word : dictionary) {//迴圈輸出字典
         std::cout << word.first << ": " << word.second << "\n";
