@@ -1,5 +1,5 @@
 # HW2_hash_practice
-# Python
+## Python
 [python](HW2_hash_practice.py)
 ```python 
 path='hw2_data.txt' #輸入路徑
@@ -28,4 +28,42 @@ Rib出現33次
 Taco出現57次
 Pho出現19次
 Potato出現3次
+```
+## C++
+[c++](HW2_hash_practice.cpp)
+```cpp
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include<map>
+using namespace std;
+
+int main() {
+    ifstream ifs("hw2_data.txt", std::ios::in);//開txt
+
+    map<string, int> dictionary;//字典
+
+    string line;//宣告單行
+    while (getline(ifs, line)) {//讀取單行
+        dictionary[line]+=1;
+    }
+    for (const auto& word : dictionary) {//迴圈輸出字典
+        std::cout << word.first << ": " << word.second << "\n";
+    }
+    ifs.close();
+}
+```
+輸出
+```
+Burger: 196
+Cheese: 234
+Coke: 145
+Fries: 76
+Pho: 19
+Pizza: 83
+Potato: 3
+Rib: 33
+Steak: 46
+Taco: 57
 ```
